@@ -34,13 +34,16 @@ class Node
   end
 end
 
-class Board
-  attr_accessor :center
+board = []
 
-  def initialize(x, y)
-    @center = Node.new(x, y)
+a = *(0..7)
+
+a.each do |i|
+  a.each do |j|
+    board.push(Node.new(i, j))
   end
 end
 
-n = Node.new(0, 0)
-puts n.make_neighbours
+board.each { |vertex| vertex.make_neighbours }
+
+p board
